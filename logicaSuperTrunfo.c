@@ -1,10 +1,13 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 
 
 int main() {
    
     // Criação das varieveis
+
+    int opcao;
+
     char Estado_1[20];
     char Codigo_da_carta_1[10];
     char Nome_da_cidade_1[50];
@@ -90,7 +93,7 @@ int main() {
         "Populacao: %d\n"
         "Area em km: %.0f\n"
         "Pib: %.2f\n"
-        "Quantidade de pontos turisticos: %d\n",
+        "Quantidade de pontos turisticos: %d\n\n",
         Estado_1,
         Codigo_da_carta_1,
         Nome_da_cidade_1,
@@ -108,7 +111,7 @@ int main() {
         "Populacao: %d\n"
         "Area em km: %.0f\n"
         "Pib: %.2f\n"
-        "Quantidade de pontos turisticos: %d\n",
+        "Quantidade de pontos turisticos: %d\n\n",
         Estado_2,
         Codigo_da_carta_2,
         Nome_da_cidade_2,
@@ -120,48 +123,198 @@ int main() {
 
     //teste de condição para o vencedor
     printf("----BATALHA----\n\n");
+    printf("Escolha qual atributo gostaria de escolher. \n");
+    printf("1 - POR DENSIDADE. \n");
+    printf("2 - POR PIB. \n");
+    printf("3 - POR POPULACAO. \n");
+    printf("4 - POR AREA. \n");
+    printf("5 - POR PONTOS TURISTICOS. \n");
+    scanf("%d", &opcao);
 
-    printf("---Por Densidade---\n");
-    if (Densidade_1 > Densidade_2)
+    //menu de seleção da batalha
+    switch (opcao)
     {
-        printf("--- %s e a VENCEDORA!!! ----\n",Nome_da_cidade_1);
-    }else(
-        printf("--- %s e a VENCEDORA!!! ---\n",Nome_da_cidade_2)
-    );
+    case 1:
+         printf("---Por Densidade---\n");
+        if (Densidade_1 < Densidade_2)
+        {
+            printf("--- %s e a VENCEDORA!!! ----\n",Nome_da_cidade_1);
+        }else if(Densidade_1 > Densidade_2)(
+            printf("--- %s e a VENCEDORA!!! ---\n",Nome_da_cidade_2)
+        );else
+        {
+            printf("EMPATE.\n");
+        }
+        
+        break;
     
-    printf("----BATALHA----\n\n");
+    case 2:
+        printf("---Por Pib percapta---\n");
+        if (Pib_percapta_1 > Pib_percapta_2)
+        {
+            printf("--- %s e a VENCEDORA!!! ----\n",Nome_da_cidade_1);
+        }else if(Pib_1 < Pib_2)(
+            printf("--- %s e a VENCEDORA!!! ---\n",Nome_da_cidade_2)
+        );else
+        {
+            printf("Empate\n");
+        }
+        
+        break;
+    
+    case 3:
+        printf("---Por Populacao--- \n");
+        if (Populacao_1 > Populacao_2)
+        {
+            printf("--- %s e a VENCEDORA!!! ---\n",Nome_da_cidade_1);
+        }else if(Populacao_1 < Populacao_2)(
+            printf("--- %s e a VENCEDORA!!! ---\n",Nome_da_cidade_2)
+        );else
+        {
+            printf("Empate\n");
+        }
+        
+        break;
+    
+    case 4:
+        printf("---Por Area--- \n");
+        if (Area_em_km_1 > Area_em_km_2)
+        {
+            printf("--- %s e a VENCEDORA!!! ---\n",Nome_da_cidade_1);
+        }else if(Area_em_km_1 < Area_em_km_2)(
+            printf("--- %s e a VENCEDORA!!! ---\n",Nome_da_cidade_2)
+        );else
+        {
+            printf("Empate \n");
+        }
+        
+        break;
+    
+    case 5:
+        printf("---Por Pontos Turisticos--- \n");
+        if (N_pontos_turisticos_1 > N_pontos_turisticos_2)
+        {
+            printf("--- %s e a VENCEDORA!!! ---\n",Nome_da_cidade_1);
+        }else if(N_pontos_turisticos_1 < N_pontos_turisticos_2)(
+            printf("--- %s e a VENCEDORA!!! ---\n",Nome_da_cidade_2)
+        );else
+        {
+            pr("Empate \n");
+        }
+        
+        break;
+    
+    default:
+        printf("Digite uma opcao valida");
+        break;
+    }
 
-    printf("---Por Pib percapta---\n");
-    if (Pib_percapta_1 > Pib_percapta_2)
-    {
-        printf("--- %s e a VENCEDORA!!! ----\n",Nome_da_cidade_2);
-    }else(
-        printf("--- %s e a VENCEDORA!!! ---\n",Nome_da_cidade_2)
-    );
     
+    
+
+
+
+
+
+
+
+
 
    
- 
-    // 
-    // (Repita para cada propriedade)
+ /* estudos do switch
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
+    int opcao,valor_1,valor_2;
 
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
+    printf("Teste de switch \n");
+    printf("Digite Valor 1 \n");
+    scanf("%d", &valor_1);
+    printf("Digite Valor 2 \n");
+    scanf("%d", &valor_2);
 
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
+    printf("1 - Soma \n");
+    printf("2 - Subtração \n");
+    printf("3 - Multiplicacao \n");
+    printf("4 - Divisao \n");
+    scanf("%d", &opcao);
 
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
+    switch (opcao){
+        case 1:
+            printf("A soma do valor 1 + valor 2 e: %d",valor_1+valor_2);
+            break;
+        
+        case 2:
+            printf("A subtracao do valor 1 + valor 2 e: %d",valor_1-valor_2);
+            break;
+        
+        case 3:
+            printf("A multiplicacao do valor 1 + valor 2 e: %d",valor_1*valor_2);
+            break;
+        
+        case 4:
+            if (valor_2 != 0)
+            {
+            printf("A Divisao do valor 1 + valor 2 e: %d",valor_1/valor_2);
+            break;    
+            }else(
+                printf("Valor 1 nao pode ser dividido por 0 \n")
+            );
+            break;
+        
+        default:
+            printf("Opcao invalida,  digite um valor de 1 a 4 para continuar! \n");
+            break;    
+    }        
+*/
+
+/*
+    int opcao,dado,adivinhacao;
+
+    dado= (rand() % 10)+1;
+
+    printf("--- JOGO DA ADVINHACAO ---\n\n");
+    printf("1 - INICIAR O JOGO \n");
+    printf("2 - VER REGRAS \n");
+    printf("3 - SAIR \n");
+
+    printf("DIGITE A OPCAO DESEJADA \n");
+    scanf("%d", &opcao);
+
+    switch (opcao)
+    {
+    case 1:
+        
+        printf("FACA SUA APOSTA EM NUMERO DE 1 A 10 \n");
+        scanf("%d",&adivinhacao);
+
+        if (dado == adivinhacao)
+        {
+            printf("O NUMERO SORTEADO FOI %d \n",dado);
+            printf("PARABENS VOCE GANHOU!!! \n");
+        }else
+        {
+            printf("O NUMERO SORTEADO FOI %d \n",dado);
+            printf("BOA SORTE NA PROXIMA. \n");
+        }
+        break;
+    
+    case 2:
+        
+        printf("AS REGRAS SAO SIMPLES, VOCE ESCOLHE UM NUMERO DE 1 A 10, SE ACERTAR O VALOR GERADO VOCE GANHA");
+        break;
+    
+    case 3:
+        
+        printf("SAINDO DO JOGO.");
+        break;
+    
+    default:
+        
+        printf("ESCOLHA UMA OPCAO VALIDA!");
+        break;
+    }
+*/
+
+
 
     return 0;
 }
